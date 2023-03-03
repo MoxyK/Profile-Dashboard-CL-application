@@ -1,0 +1,19 @@
+{
+  "name": "profile-dashboard-cl-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoxyK/Profile-Dashboard-CL-application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoxyK/Profile-Dashboard-CL-application/issues"
+  },
+  "homepage": "https://github.com/MoxyK/Profile-Dashboard-CL-application#readme"
+}
