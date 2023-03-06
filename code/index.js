@@ -18,6 +18,71 @@ const teamMembers = []
 
 
 const appMenu = () => {
+
+    function addEngineer() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "What is your engineer name?"
+             },
+             {
+                type: "input",
+                name: "engineerId",
+                message: "What is your engineer ID?"
+             },
+             {
+                type: "input",
+                name: "engineerEmail",
+                message: "What is your engineer email?"
+             },
+             {
+                type: "input",
+                name: "engineerGithub",
+                message: "What is your engineer Github?"
+             },
+        ]).then(answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
+            teamMembers.push(engineer);
+            idList.push(answers.engineerId);
+            createTeam()
+        })
+    }
+
+    function addIntern() {
+
+    }
+
+    function completeTeam() {
+
+    }
+
+    function createTeam() {
+        inquirer.prompt([
+            {
+               type: "List",
+               name: "memberChoice", 
+               message: "Which team members would you like to add?",
+               choices: [
+                    "Engineer",
+                    "Intern",
+                    "No more members needed"
+               ]
+            }
+        ]).then(userChoice => {
+            if(userChoice.memberChoice === "Engineer") {
+                // Engineer add
+                addEngineer();
+            } else if(userChoice.memberChoice === "Intern") {
+                // Intern add
+                addIntern();
+            } else {
+                // Complete team
+                completeTeam();
+            }
+        })
+    }
+
     function createManager(){
         console.log("Begin buidling your team.");
         inquirer.prompt([
@@ -44,11 +109,15 @@ const appMenu = () => {
             },
 
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers,managerId, answers.managerEmail, answers.managerOfficeNumber)
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber)
             teamMembers.push(manager);
             idList.push(answers.managerId);
+            createTeam();
         })
-
-
     }
+
+    createManager();
 }
+
+
+appMenu();
