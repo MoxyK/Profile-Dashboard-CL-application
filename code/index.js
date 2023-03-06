@@ -19,6 +19,11 @@ const teamMembers = []
 
 const appMenu = () => {
 
+    
+    function completeTeam() {
+        
+    }
+
     function addEngineer() {
         inquirer.prompt([
             {
@@ -40,7 +45,7 @@ const appMenu = () => {
                 type: "input",
                 name: "engineerGithub",
                 message: "What is your engineer Github?"
-             },
+             }
         ]).then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
             teamMembers.push(engineer);
@@ -50,11 +55,33 @@ const appMenu = () => {
     }
 
     function addIntern() {
-
-    }
-
-    function completeTeam() {
-
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "internName",
+                message: "What is your intern name?"
+             },
+             {
+                type: "input",
+                name: "internId",
+                message: "What is your intern ID?"
+             },
+             {
+                type: "input",
+                name: "internEmail",
+                message: "What is your intern email?"
+             },
+             {
+                type: "input",
+                name: "internSchool",
+                message: "What is your intern School?"
+             }
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
+            teamMembers.push(intern);
+            idList.push(answers.internId);
+            createTeam()
+        })
     }
 
     function createTeam() {
@@ -84,7 +111,7 @@ const appMenu = () => {
     }
 
     function createManager(){
-        console.log("Begin buidling your team.");
+        console.log("Begin building your team.");
         inquirer.prompt([
             {
                 type: "input",
