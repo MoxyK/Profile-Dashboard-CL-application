@@ -31,22 +31,46 @@ const appMenu = () => {
             {
                 type: "input",
                 name: "engineerName",
-                message: "What is your engineer name?"
+                message: "What is your engineer name?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "engineerId",
-                message: "What is your engineer ID?"
+                message: "What is your engineer ID?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "engineerEmail",
-                message: "What is your engineer email?"
+                message: "What is your engineer email?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "engineerGithub",
-                message: "What is your engineer Github?"
+                message: "What is your engineer Github?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
         ]).then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
@@ -62,22 +86,46 @@ const appMenu = () => {
             {
                 type: "input",
                 name: "internName",
-                message: "What is your intern name?"
+                message: "What is your intern name?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "internId",
-                message: "What is your intern ID?"
+                message: "What is your intern ID?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "internEmail",
-                message: "What is your intern email?"
+                message: "What is your intern email?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
              {
                 type: "input",
                 name: "internSchool",
-                message: "What is your intern School?"
+                message: "What is your intern School?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
              },
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
@@ -121,22 +169,46 @@ const appMenu = () => {
                 type: "input",
                 name: "managerName",
                 message: "What is the team manager's name?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
             },
 
             {
                 type: "input",
                 name: "managerId",
                 message: "What is the team manager's Id?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
             },
             {
                 type: "input",
                 name: "managerEmail",
-                message: "What is the team manager's email?"
+                message: "What is the team manager's email?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
             },
             {
                 type: "input",
                 name: "managerOfficeNumber",
-                message: "What is the team manager's office number?"
+                message: "What is the team manager's office number?",
+                validate: (answer) => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character";
+                },
             },
 
         ]).then(answers => {
